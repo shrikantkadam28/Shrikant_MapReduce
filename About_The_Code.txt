@@ -1,0 +1,17 @@
+
+======Input Files
+
+Customer_Info.csv -- Customer Data
+Sales.csv --Sales Data
+
+=======Output File
+out_StateWise_States-- Output File
+
+========Code
+
+Mapper.py --Python fucntion for Mapper
+Reducer.py --Python fucntion for reducer
+
+=======instructions to run the job
+
+Running_the_Job.txt

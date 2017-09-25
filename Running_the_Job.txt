@@ -1,0 +1,21 @@
+
+==========Running the mapper and reducer in python
+
+type C:\Shrikant\Python_Scripts\MapReduce\INT\Customer_Info.csv C:\Shrikant\Python_Scripts\MapReduce\INT\Sales.csv|C:\Shrikant\Python_Scripts\MapReduce\INT\Mapper.py|sort|C:\Shrikant\Python_Scripts\MapReduce\INT\Reducer.py
+
+=========Running the mapper and redcuer in HDFS
+
+
+hadoop jar ../contrib/streaming/hadoop-0.20.1+169.89-streaming.jar 
+-D mapred.reduce.tasks=4 
+-file ~/Mapper.py 
+-mapper Mapper.py 
+-file ~/Reducer.py 
+-reducer Reducer.py 
+-input Customer_Info.csv -input Sales.csv 
+-output out_StateWise_States.csv 
+-partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner 
+-jobconf stream.map.output.field.separator=^
+-jobconf stream.num.map.output.key.fields=4 
+-jobconf map.output.key.field.separator=^ 
+-jobconf num.key.fields.for.partition=1
